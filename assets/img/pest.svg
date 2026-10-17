@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Pest remote sensing">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F6FAF3"/><stop offset="1" stop-color="#E9F1F8"/></linearGradient>
+    <linearGradient id="beam" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2F80ED" stop-opacity=".35"/><stop offset="1" stop-color="#2F80ED" stop-opacity="0"/></linearGradient>
+    <radialGradient id="hot" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#E4572E" stop-opacity=".9"/><stop offset=".55" stop-color="#F2A900" stop-opacity=".55"/><stop offset="1" stop-color="#F2A900" stop-opacity="0"/></radialGradient>
+    <pattern id="rowsA" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(-12)"><rect width="10" height="10" fill="#7BC043"/><rect width="10" height="4" fill="#5FA032"/></pattern>
+    <pattern id="rowsB" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(18)"><rect width="12" height="12" fill="#A9D46F"/><rect width="12" height="4" fill="#8DC052"/></pattern>
+    <pattern id="rowsC" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(-30)"><rect width="9" height="9" fill="#F6C453"/><rect width="9" height="3" fill="#E9AE2F"/></pattern>
+    <clipPath id="field"><path d="M60 170 L520 140 L560 400 L40 420 Z"/></clipPath>
+    <filter id="sh" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#0B2E59" flood-opacity=".18"/></filter>
+  </defs>
+  <rect width="800" height="450" rx="18" fill="url(#bg)"/>
+  <!-- orbit lines -->
+  <path d="M-10 120 C 220 30, 520 20, 810 90" fill="none" stroke="#0E4C92" stroke-opacity=".25" stroke-width="1.2"/>
+  <path d="M-10 140 C 240 60, 540 50, 810 120" fill="none" stroke="#F2A900" stroke-opacity=".5" stroke-width="1.2" stroke-dasharray="4 6"/>
+  <!-- field parcels -->
+  <g clip-path="url(#field)" filter="url(#sh)">
+    <path d="M60 170 L300 154 L290 290 L48 300 Z" fill="url(#rowsA)"/>
+    <path d="M300 154 L520 140 L536 262 L290 290 Z" fill="url(#rowsB)"/>
+    <path d="M48 300 L290 290 L300 410 L40 420 Z" fill="url(#rowsB)"/>
+    <path d="M290 290 L536 262 L560 400 L300 410 Z" fill="url(#rowsA)"/>
+    <path d="M175 225 L240 222 L236 280 L172 284 Z" fill="url(#rowsC)" opacity=".9"/>
+    <g stroke="#fff" stroke-width="3" fill="none" opacity=".9"><path d="M60 170 L520 140 L560 400 L40 420 Z"/><path d="M300 154 L300 410"/><path d="M48 300 L290 290 L536 262"/></g>
+  </g>
+  <!-- satellite + scan beam -->
+  <path d="M640 70 L330 236 L470 290 Z" fill="url(#beam)"/>
+  <g transform="translate(640 70) rotate(-28)">
+    <rect x="-16" y="-11" width="32" height="22" rx="4" fill="#0E4C92"/>
+    <rect x="-70" y="-8" width="48" height="16" rx="2" fill="#1E73BE"/><rect x="22" y="-8" width="48" height="16" rx="2" fill="#1E73BE"/>
+    <g stroke="#9CC5F0" stroke-width="1"><path d="M-58 -8v16M-46 -8v16M-34 -8v16M34 -8v16M46 -8v16M58 -8v16"/></g>
+    <circle cx="0" cy="16" r="5" fill="#F2A900"/>
+  </g>
+  <!-- hotspots -->
+  <g>
+    <circle cx="410" cy="250" r="54" fill="url(#hot)"/>
+    <circle cx="410" cy="250" r="34" fill="none" stroke="#E4572E" stroke-width="1.5" stroke-dasharray="3 4"><animate attributeName="r" values="30;46;30" dur="3.2s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;.2;1" dur="3.2s" repeatCount="indefinite"/></circle>
+    <circle cx="410" cy="250" r="4" fill="#E4572E"/>
+    <circle cx="170" cy="355" r="36" fill="url(#hot)"/>
+    <circle cx="170" cy="355" r="3.5" fill="#E4572E"/>
+    <circle cx="470" cy="350" r="22" fill="url(#hot)" opacity=".7"/>
+  </g>
+  <!-- magnifier with leaf + bug -->
+  <g transform="translate(640 280)" filter="url(#sh)">
+    <path d="M-62 -40 L-205 -30" stroke="#0E4C92" stroke-opacity=".5" stroke-width="1.5" stroke-dasharray="4 5"/>
+    <circle r="78" fill="#fff"/>
+    <circle r="78" fill="none" stroke="#0E4C92" stroke-width="6"/>
+    <path d="M55 55 L95 95" stroke="#0E4C92" stroke-width="14" stroke-linecap="round"/>
+    <path d="M-44 30 C -40 -30, 10 -52, 48 -46 C 50 0, 14 40, -44 30 Z" fill="#7BC043"/>
+    <path d="M-44 30 L 40 -38" stroke="#4F8F2A" stroke-width="2.5" fill="none"/>
+    <circle cx="10" cy="-10" r="9" fill="#C9E3A8"/><circle cx="-14" cy="12" r="6" fill="#E9AE2F" opacity=".8"/>
+    <g transform="translate(14 6) rotate(-35)">
+      <ellipse cx="0" cy="0" rx="9" ry="13" fill="#E4572E"/>
+      <path d="M0 -13 V13" stroke="#8E2A12" stroke-width="1.4"/>
+      <circle cx="0" cy="-16" r="5" fill="#2B2B2B"/>
+      <g stroke="#2B2B2B" stroke-width="1.6" stroke-linecap="round"><path d="M-8 -4 L-15 -8M-9 3 L-16 4M-7 9 L-13 15M8 -4 L15 -8M9 3 L16 4M7 9 L13 15M-2 -20 L-6 -27M2 -20 L6 -27"/></g>
+      <g fill="#2B2B2B"><circle cx="-3.5" cy="-3" r="1.8"/><circle cx="3.5" cy="4" r="1.8"/><circle cx="-3" cy="8" r="1.4"/></g>
+    </g>
+  </g>
+  <!-- NDVI card -->
+  <g transform="translate(36 30)" filter="url(#sh)">
+    <rect width="232" height="104" rx="12" fill="#fff"/>
+    <text x="16" y="28" font-family="Vazirmatn, Segoe UI, Arial, sans-serif" font-size="14" font-weight="700" fill="#0B2E59">NDVI · NDRE</text>
+    <circle cx="210" cy="23" r="5" fill="#E4572E"/>
+    <path d="M16 84 H216" stroke="#E3E8E4"/>
+    <path d="M16 78 C 50 70, 70 46, 100 40 S 140 38, 152 44" fill="none" stroke="#5FA032" stroke-width="3" stroke-linecap="round"/>
+    <path d="M152 44 C 168 52, 186 72, 216 76" fill="none" stroke="#E4572E" stroke-width="3" stroke-linecap="round" stroke-dasharray="5 4"/>
+    <circle cx="152" cy="44" r="5" fill="#fff" stroke="#E4572E" stroke-width="2.5"/>
+  </g>
+</svg>
